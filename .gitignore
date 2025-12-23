@@ -1,0 +1,44 @@
+# Node modules
+node_modules/
+/server/node_modules/
+/client/node_modules/
+
+# Build output
+dist/
+dist-ssr/
+build/
+
+# Vite cache
+.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Optional: lock files (if you want reproducible installs, keep them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# bun.lockb

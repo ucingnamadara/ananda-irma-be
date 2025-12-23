@@ -1,0 +1,23 @@
+{
+  "name": "ananda-irma-server",
+  "version": "0.0.0",
+  "main": "./src/index.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=../.env",
+    "start": "node -r dotenv/config src/index.js dotenv_config_path=../.env",
+    "build": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11",
+    "pg": "^8.16.3",
+    "sequelize": "^6.37.7"
+  }
+}
