@@ -48,7 +48,6 @@ app.get('/api/rsvp', async (req, res) => {
 });
 
 app.post('/api/rsvp', async (req, res) => {
-    console.log(req.body)
     const { name, isPresence, total, comment, guestId } = req.body;
     try {
         const newRsvp = await Rsvp.create({
