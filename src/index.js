@@ -32,7 +32,8 @@ app.get('/api/rsvp', async (req, res) => {
     const {limit, page} = req.query;
     const rsvps = await Rsvp.findAndCountAll({
         limit: limit ? parseInt(limit) : undefined,
-        offset: page ? (parseInt(page) - 1) * (limit ? parseInt(limit) : 10) : undefined
+        offset: page ? (parseInt(page) - 1) * (limit ? parseInt(limit) : 10) : undefined,
+        order: [['createdAt', 'DESC']],
     });
 
     const response = {
@@ -47,6 +48,7 @@ app.get('/api/rsvp', async (req, res) => {
 });
 
 app.post('/api/rsvp', async (req, res) => {
+    console.log(req.body)
     const { name, isPresence, total, comment, guestId } = req.body;
     try {
         const newRsvp = await Rsvp.create({
@@ -55,7 +57,7 @@ app.post('/api/rsvp', async (req, res) => {
             total,
             comment,
             guestId
-        }, { order: [['createdAt', 'DESC']] });
+        });
         res.status(200).json(newRsvp);
     } catch (error) {
         res.status(400).json({ message: 'Error creating RSVP', error: error.message });
